@@ -9,6 +9,7 @@ export const defaultState: GlobalState = {
   selectedFeature: null,
   overviewSelectedControl: null,
   overviewControls: [],
+  overviewCircularProgressData: [],
 };
 
 export const globalReducer = (state: GlobalState, action: GlobalAction): GlobalState => {
@@ -23,10 +24,12 @@ export const globalReducer = (state: GlobalState, action: GlobalAction): GlobalS
       return { ...state, features: action.payload };
     case actionTypes.SET_SELECTED_FEATURE:
       return { ...state, selectedFeature: action.payload };
-    case actionTypes.SET_OVERVIEW_SELECTED_CONTROL:
-      return { ...state, overviewSelectedControl: action.payload };
     case actionTypes.SET_OVERVIEW_CONTROLS:
       return { ...state, overviewControls: action.payload };
+    case actionTypes.SET_OVERVIEW_SELECTED_CONTROL:
+      return { ...state, overviewSelectedControl: action.payload };
+    case actionTypes.SET_OVERVIEW_CIRCULAR_PROGRESS_DATA:
+      return { ...state, overviewCircularProgressData: action.payload };
     default:
       return state;
   }

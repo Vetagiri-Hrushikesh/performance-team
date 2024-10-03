@@ -13,7 +13,6 @@ const DisplayController: React.FC = () => {
     
     const features = getAllowedFeatures(packageType, role);
     dispatch({ type: 'SET_FEATURES', payload: features });
-    
     // Optionally set a default feature if none is selected
     if (!state.selectedFeature && features.length > 0) {
       dispatch({ type: 'SET_SELECTED_FEATURE', payload: features[0] });
