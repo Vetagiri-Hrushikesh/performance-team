@@ -1,0 +1,9 @@
+{
+  "name": "web-preformance-checker",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src/libs/web-performance-checker/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project web-preformance-checker --web",
+  "targets": {}
+}
