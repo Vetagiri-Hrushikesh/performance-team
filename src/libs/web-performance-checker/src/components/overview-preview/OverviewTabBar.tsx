@@ -24,6 +24,7 @@ const OverviewTabBar: React.FC = () => {
         <Tab label="Best Practices" />
         <Tab label="SEO" />
       </Tabs>
+      {/* Right side: Grid container for tab content */}
       <Grid container direction="column" sx={{ flexGrow: 1, p: 2 }}>
         <Typography variant="h6">
           {selectedTab === 0 && 'Performance Details...'}

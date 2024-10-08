@@ -17,14 +17,14 @@ export const getAllowedApisForControls = (
   packageType: PackageType,
   role: RoleType
 ): { [control in OverviewControlName]?: string } => {
-  const apis: { [control in OverviewControlName]?: string } = {};
-
+  const apis: { [control in OverviewControlName]?: string } = {};   // Initialize an empty object to store API URLs
+  // Iterate through the provided controls to fetch their corresponding API URLs
   controls.forEach((control) => {
-    const config = overviewAPIAccessConfig[control];
+    const config = overviewAPIAccessConfig[control];    // Retrieve the API access configuration for the specific control
     if (config) {
-      apis[control] = config[role][packageType];
+      apis[control] = config[role][packageType];        // Map the control name to its API URL based on the user's role and package type
     }
   });
 
-  return apis;
+  return apis;    // Return the object containing the API URLs for the specified controls
 };

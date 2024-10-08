@@ -2,12 +2,14 @@ import React from 'react';
 import { CircularProgress, Box, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 
+// Define the props for the CircularProgress component
 interface CircularProgressProps {
   metrics: { label: string; value: number }[];
 }
-
+// OverviewCircularProgress component to display circular progress indicators
 const OverviewCircularProgress: React.FC<CircularProgressProps> = ({ metrics }) => {
   return (
+// Grid container to arrange circular progress indicators
     <Grid container spacing={2} justifyContent="center">
       {metrics.map((metric, index) => (
         <Grid key={index} xs={'auto'}>
@@ -25,11 +27,13 @@ const OverviewCircularProgress: React.FC<CircularProgressProps> = ({ metrics }) 
                 justifyContent: 'center',
               }}
             >
+              {/* Display the percentage value inside the circular progress */}
               <Typography variant="caption" component="div" color="text.secondary">
                 {`${Math.round(metric.value)}%`}
               </Typography>
             </Box>
           </Box>
+          {/* Label for the metric */}
           <Typography align="center">{metric.label}</Typography>
         </Grid>
       ))}
